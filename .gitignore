@@ -1,0 +1,27 @@
+# Virtual Environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# Reports Output
+*.pdf
+
+# DS Store
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# FAISS index
+*.index
