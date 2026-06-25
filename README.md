@@ -1,12 +1,10 @@
-Go to your GitHub repo → click on README.md → click the pencil icon (Edit) → select all and delete everything → paste this:
-
-⚡ AIForge — Production AI Evaluation & Agent Testing Platform
+AIForge — Production AI Evaluation & Agent Testing Platform
 
 "LangSmith + OpenAI Evals + Promptfoo — built from scratch."
 
 AIForge is a full-stack platform that automatically benchmarks multiple AI models on your custom datasets and tells you which model is the best, cheapest, and most reliable — in minutes.
 
-🎯 The Problem
+The Problem
 Every company building AI products asks:
 
 Which model should we use — Llama, Gemma, GPT, or Claude?
@@ -16,7 +14,7 @@ Which model gives the best quality per dollar?
 
 Most companies solve this manually. AIForge automates it.
 
-🚀 What AIForge Does
+What AIForge Does
 
 You upload a CSV with questions and expected answers
 AIForge sends every question to multiple AI models simultaneously
@@ -26,10 +24,10 @@ AIForge picks the best model based on combined scores
 A professional PDF report is generated with full analysis
 
 
-✨ Features
+Features
 FeatureDescription🤖 Multi-Model BenchmarkingTest Llama 3.3, Llama 3.1, Gemma, Qwen simultaneously📊 Dual Evaluation EngineSentence Transformer similarity + LLM-as-a-Judge scoring🧠 Hallucination DetectionAutomatically flags answers below similarity threshold🧪 Experiment TrackingEvery run saved with full history and metrics📝 Prompt VersioningCompare outputs across different prompt versions📄 PDF Report GeneratorExecutive-ready reports with model rankings and cost analysis📁 Dataset ManagerUpload custom CSV datasets with preview🐳 Docker SupportOne-command deployment with Docker Compose🔌 REST API15 endpoints with Swagger documentation✅ Test Suite12 unit tests across all core components
 
-🏗️ Architecture
+Architecture
 Engineer
     ↓
 Streamlit Frontend (6 pages)
@@ -54,7 +52,7 @@ PDF Report Generator
 🛠️ Tech Stack
 LayerTechnologyBackendPython, FastAPI, UvicornFrontendStreamlitLLM LayerGroq APIAI ModelsLlama 3.3 70b, Llama 3.1 8b, Gemma 2 9b, Qwen QwQ 32bEvaluationSentence Transformers, Scikit-learnDatabaseSQLite, SQLAlchemyReportsReportLabContainerizationDocker, Docker Compose
 
-📁 Folder Structure
+Folder Structure
 AIForge/
 ├── frontend/
 │   ├── app.py
@@ -93,7 +91,7 @@ AIForge/
 ├── requirements.txt
 └── README.md
 
-⚡ Quick Start
+Quick Start
 Option 1 — Local Development
 1. Clone the repository
 bashgit clone https://github.com/mr-basu-singh/AIForge.git
@@ -120,31 +118,31 @@ API Docs: http://localhost:8000/docs
 Option 2 — Docker
 bashdocker-compose up --build
 
-📊 How To Use
+How To Use
 Step 1 — Upload Dataset
 Go to Dataset Manager and upload a CSV:
 question,expected_answer
 What is RAG?,Retrieval Augmented Generation...
 What is LangChain?,LangChain is a framework...
 Step 2 — Run Experiment
-Go to Run Experiment → select models → click 🚀 Run Experiment
+Go to Run Experiment → select models → click Run Experiment
 Step 3 — View Results
 Go to Results & Metrics → see comparison table, charts, best model
 Step 4 — Download Report
 Go to Reports → Generate PDF → download executive report
 
-📈 Real Benchmark Results
+Real Benchmark Results
 ModelSimilarityJudge ScoreLatencyCostHallucinationllama-3.3-70b-versatile0.6957.4/100.455s$0.00096610%llama-3.1-8b-instant0.6367.0/100.474s$0.00021820%
 
-🔌 API Endpoints
+API Endpoints
 MethodEndpointDescriptionGET/api/v1/healthHealth checkGET/api/v1/modelsList available modelsGET/api/v1/promptsList prompt versionsPOST/api/v1/promptsCreate prompt versionDELETE/api/v1/prompts/{version}Delete prompt versionPOST/api/v1/datasets/uploadUpload CSV datasetGET/api/v1/datasetsList datasetsPOST/api/v1/experiments/runRun experimentGET/api/v1/experimentsList all experimentsGET/api/v1/experiments/{id}Get experiment detailsGET/api/v1/experiments/{id}/metricsGet model metricsGET/api/v1/experiments/{id}/resultsGet detailed resultsGET/api/v1/experiments/{id}/best-modelGet best modelGET/api/v1/experiments/{id}/reportDownload PDF report
 
-🧪 Running Tests
+Running Tests
 bashpython tests/test_database.py
 python tests/test_evaluators.py
 python tests/test_adapters.py
 
-🗺️ Roadmap
+Roadmap
 
  Multi-provider support (OpenAI, Anthropic, Google Gemini)
  User authentication and API key management
@@ -154,10 +152,10 @@ python tests/test_adapters.py
  Real-time progress with WebSockets
 
 
-👨‍💻 Author
+Author
 Basu Singh
 
 GitHub: @mr-basu-singh
 
-⭐ Support
+Support
 If this project helped you — give it a ⭐ on GitHub!
