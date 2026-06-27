@@ -62,31 +62,29 @@ Most companies solve this **manually**. AIForge **automates it**.
 
 ## ⚡ Quick Start
 
-### Local Development
-
 **1. Clone the repository**
 
-```
+```bash
 git clone https://github.com/mr-basu-singh/AIForge.git
 cd AIForge
 ```
 
 **2. Create virtual environment**
 
-```
+```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
 **3. Install dependencies**
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 **4. Add your Groq API key to .env**
 
-```
+```bash
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
@@ -94,13 +92,13 @@ Get your free Groq API key at https://console.groq.com
 
 **5. Start backend in Terminal 1**
 
-```
+```bash
 uvicorn backend.api.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 **6. Start frontend in Terminal 2**
 
-```
+```bash
 streamlit run frontend/app.py
 ```
 
@@ -112,11 +110,16 @@ streamlit run frontend/app.py
 
 ---
 
-### Docker
+## 🐳 Docker
 
-```
+Run everything with one command:
+
+```bash
 docker-compose up --build
 ```
+
+- Frontend: http://localhost:8501
+- Backend: http://localhost:8000
 
 ---
 
@@ -126,7 +129,7 @@ docker-compose up --build
 
 Go to Dataset Manager and upload a CSV file:
 
-```
+```csv
 question,expected_answer
 What is RAG?,Retrieval Augmented Generation...
 What is LangChain?,LangChain is a framework...
@@ -159,20 +162,20 @@ From an actual AIForge experiment:
 
 ## 🔌 API Endpoints
 
-- GET /api/v1/health — Health check
-- GET /api/v1/models — List available models
-- GET /api/v1/prompts — List prompt versions
-- POST /api/v1/prompts — Create prompt version
-- DELETE /api/v1/prompts/{version} — Delete prompt version
-- POST /api/v1/datasets/upload — Upload CSV dataset
-- GET /api/v1/datasets — List datasets
-- POST /api/v1/experiments/run — Run experiment
-- GET /api/v1/experiments — List all experiments
-- GET /api/v1/experiments/{id} — Get experiment details
-- GET /api/v1/experiments/{id}/metrics — Get model metrics
-- GET /api/v1/experiments/{id}/results — Get detailed results
-- GET /api/v1/experiments/{id}/best-model — Get best model
-- GET /api/v1/experiments/{id}/report — Download PDF report
+- GET `/api/v1/health` — Health check
+- GET `/api/v1/models` — List available models
+- GET `/api/v1/prompts` — List prompt versions
+- POST `/api/v1/prompts` — Create prompt version
+- DELETE `/api/v1/prompts/{version}` — Delete prompt version
+- POST `/api/v1/datasets/upload` — Upload CSV dataset
+- GET `/api/v1/datasets` — List datasets
+- POST `/api/v1/experiments/run` — Run experiment
+- GET `/api/v1/experiments` — List all experiments
+- GET `/api/v1/experiments/{id}` — Get experiment details
+- GET `/api/v1/experiments/{id}/metrics` — Get model metrics
+- GET `/api/v1/experiments/{id}/results` — Get detailed results
+- GET `/api/v1/experiments/{id}/best-model` — Get best model
+- GET `/api/v1/experiments/{id}/report` — Download PDF report
 
 Full interactive docs at http://localhost:8000/docs
 
@@ -180,7 +183,7 @@ Full interactive docs at http://localhost:8000/docs
 
 ## 🧪 Running Tests
 
-```
+```bash
 python tests/test_database.py
 python tests/test_evaluators.py
 python tests/test_adapters.py
@@ -188,7 +191,7 @@ python tests/test_adapters.py
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ Future Work
 
 - Multi-provider support (OpenAI, Anthropic, Google Gemini)
 - User authentication and API key management
